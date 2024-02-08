@@ -4,8 +4,9 @@ public class Calculator
 {
     public static void main(String[] args) 
     {
-        int num1, num2, sum;
+        int num1, num2, result;
         //Create a Scanner object
+        String operation;
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter first number: ");
@@ -14,8 +15,23 @@ public class Calculator
         System.out.println("Enter second number: ");
         num2 = scanner.nextInt(); //read user input 2
 
-        sum = num1 + num2; //calculate sum of number 1 and 2
+        System.out.println("Would you like to add or subtract the numbers? (Enter 'add' or 'subtract')");
+        operation = scanner.next();
 
-        System.out.println("The sum is: " + sum); //Prints sum
+        if ("add".equalsIgnoreCase(operation))
+        {
+            result = num1 + num2;
+            System.out.println("The result of adding is: " + result);
+        }
+        else if ("subtract".equalsIgnoreCase(operation))
+        {
+            result = num1 - num2;
+            System.out.println("The result of subtraction is: " + result);
+        }
+        else
+        {
+            System.out.println("Invalid operation entered. Please enter 'add' or 'subtract'.");
+        }
+
     }
 }
