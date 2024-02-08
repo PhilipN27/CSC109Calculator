@@ -29,14 +29,14 @@ public class Calculator
             result = number1 * number2;
             break;
         case '/':
-            if (number2 != 0)
+            if (number2 == 0)
             {
-                result = number1 / number2;
+                System.out.println("Error: Divide by Zero");
+                return;
             }
             else
             {
-                System.out.println("Cannot divide by zero.");
-                return;
+                result = number1 / number2;
             }
             break;
         default:
